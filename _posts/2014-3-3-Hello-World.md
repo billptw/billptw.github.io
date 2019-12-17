@@ -1,10 +1,11 @@
 ---
 layout: post
-title: You're up and running!
+title: Introduction
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+This blog was created to build a habit of critically reading AI research papers and brainstorming ideas. I'm hoping that the action of posting my reflections online will spur me on to produce better analyses and incite discussion and ideas in this ever-evolving field.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
-
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+A little more about myself: 
+* Currently pursuing my PhD in Nanyang Technological University :singapore:, in collaboration with [Alibaba](https://media.ntu.edu.sg/NewsReleases/Pages/newsdetail.aspx?news=9e521a80-eaec-41ac-9c7e-802a62fc8d52).
+* Enjoys adventure sports (windsurfing, kayaking, diving) to clear my mind from hustle and bustle
+* Has a history of starting blogs that die in weeks, so here's to hoping that the wheel will be broken this time round
