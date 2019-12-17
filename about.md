@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Budding AI researcher sharing his musings with the world. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+Happy to discuss AI thoughts and recieve feedback through my [NTU Email](mailto:pung0013@e.ntu.edu.sg)
