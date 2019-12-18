@@ -1,0 +1,8 @@
+---
+layout: post
+title: Sequence to Sequence Learning with Neural Networks
+---
+
+To prevent procrastination arising from a mixture of perfectionism and a healthy dose of laziness, I shall start the blogging adventure with a historic model, the encoder-decoder architecture in sequence-to-sequence modeling, and explain the motivations behind its creation.
+
+![Seq2Seq Model](/images/seq2seq.png)
