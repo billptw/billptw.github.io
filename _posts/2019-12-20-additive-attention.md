@@ -7,7 +7,7 @@ Attention mechanism is a very popular technique used in neural models today, wit
 
 ## Why attention?
 
-![Seq2Seq Model](/images/en2ch.png){:height="50%" width="50%"}{: .center-image }
+![Seq2Seq Model](/images/en2ch.png){:height="80%" width="80%"}{: .center-image }
 *Source: ([Weng, 2018](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html))*
 
 In the motivating example of translating a sentence from one language to another, the sequence-to-sequence model featuring an encoder and decoder is commonly used (refer to the [previous post]({{ site.baseurl }}{% link _posts/2019-12-18-Seq2Seq.md %}) for more in-depth explanation). In the seq2seq model, the decoder takes in an input sequence and generates a context vector of pre-defined length. For purposes of illustration, one can interpret the context vector as the 'meaning' of the input sentence that is captured by the neural network. For the above example of translating from English to Chinese, the sentence "She is eating a green apple" comprising 6 words (tokens) is represented as a context vector of 5 numbers. This context vector is then used at the input of another network, the decoder, to generate the desired translated sentence in Chinese.
