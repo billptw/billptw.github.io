@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Additive Attention
+title: Additive Attention Mechanism
 ---
 
 Attention mechanism is a very popular technique used in neural models today, with many powerful variations. Today, we will look at additive attention ([Bahdanau et al., 2014](https://arxiv.org/pdf/1409.0473.pdf)), which was introduced as a solution to the fixed-sized hidden state problem of the seq2seq model.
