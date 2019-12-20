@@ -22,6 +22,6 @@ The first improvement proposed in ([Bahdanau et al., 2014](https://arxiv.org/pdf
 
 $$\boldsymbol{h}_{j}=\left[\overrightarrow{\boldsymbol{h}}_{j}^{\top} ; \overleftarrow{\boldsymbol{h}}_{j}^{\top}\right]^{\top}, j=1, \ldots, n$$
 
-Given the annotations obtained from the encoder, we can now calculate the context vector $$\mathbf{c}_{i}$$ by multiplying the annotation of each token with an alignment score $$\alpha_{i,j}$$ as follows:
+Given the annotations obtained from the encoder, the decoder can now calculate the context vector $$\mathbf{c}_{i}$$ for each token position $$i$$, where $$i=1, \dots, m$$ for output sequence length $$m$$. The context vector is obtained by multiplying the annotation of each input sequence token with an alignment score $$\alpha_{i,j}$$ as follows:
 
 $$\mathbf{c}_{i}=\sum_{j=1}^{n} \alpha_{i,j} \boldsymbol{h}_{j}$$
