@@ -16,12 +16,19 @@ What are some potential problems of this method? The main failure mode for seq2s
 
 This arises from a known problem in training RNN-based models (the vanishing/exploding gradient problem), explained in further detail: To calculate the error between the network output and ground truth label during training, the gradients of each node across all time-steps are multiplied (a process known as backpropagation through time). When multiplying across many time-steps, small or large values of the gradients are compounded (imagine what happens when you take $$0.2$$ to the $$10^{th}$$ power), causing the gradients to converge at $$0$$ or saturate at $$\infty$$ and resulting in stalled training or NaNs (known as the vanishing and exploding gradient problem respectively). This failure mode in RNN-based encoder makes it hard for the model to properly encode for long-term dependencies between tokens many time-steps away (e.g. the first and last words in an input sentence), resulting in a context vector that represents the input sentence poorly.
 
-## Encode, Align, Attend
+## Annotate, Align, Attend
 
 The first improvement proposed in ([Bahdanau et al., 2014](https://arxiv.org/pdf/1409.0473.pdf)) is using bidirectional RNN (BiRNN) as the encoder ([Schuster and Paliwal, 1997](https://www.researchgate.net/profile/Mike_Schuster/publication/3316656_Bidirectional_recurrent_neural_networks/links/56861d4008ae19758395f85c.pdf)). For each input sequence of length $$n$$, the BiRNN reads the input sequence from the first to last token to generate the forward representation $$\overrightarrow{\boldsymbol{h}}_{j}$$ for each token $$j$$ in the sequence, and vice versa (last token to first token in reverse order) to form the backward representation $$\overleftarrow{\boldsymbol{h}}_{j}$$. The two hidden states are then concatenated to form the an annotation for each word in the sequence $$\boldsymbol{h}_{j}$$. The reason for generating a bidirectional representation for the sentence is to minimize effects of vanishing gradient problem highlighted earlier. This is represented in the equation below:
 
 $$\boldsymbol{h}_{j}=\left[\overrightarrow{\boldsymbol{h}}_{j}^{\top} ; \overleftarrow{\boldsymbol{h}}_{j}^{\top}\right]^{\top}, j=1, \ldots, n$$
 
-Given the annotations obtained from the encoder, the decoder can now calculate the context vector $$\mathbf{c}_{i}$$ for each token position $$i$$, where $$i=1, \dots, m$$ for output sequence length $$m$$. The context vector is obtained by multiplying the annotation of each input sequence token with an alignment score $$\alpha_{i,j}$$ as follows:
+Given the annotations obtained from the encoder, the decoder can now calculate the context vector $$\mathbf{c}_{i}$$ for each token position $$i$$, where $$i=1, \dots, m$$ for output sequence length $$m$$. The context vector is obtained by multiplying the each annotation of the input sequence tokens with an alignment score $$\alpha_{i,j}$$ as follows:
 
 $$\mathbf{c}_{i}=\sum_{j=1}^{n} \alpha_{i,j} \boldsymbol{h}_{j}$$
+
+$$\alpha_{i,j}$$ is the alignment score, which determines how much each source hidden state should be considered for the output. The alignment score is parameterized by a feedforward network that is trained with the model. Upon obtaining the context vector, we can then generate the decoder output as per normal seq2seq, by using the context vector and previous decoder time-step output as input into the  decoder for each time-step. 
+
+![Attention Map](/images/attention-map.png){:height="80%" width="80%"}{: .center-image }
+*Source: ([Bahdanau et al., 2014](https://arxiv.org/pdf/1409.0473.pdf))*
+
+In essence, through learning the alignment scores, the model learns how much of the annotation vector in each encoder time-step it should use for different time-steps in the decoder. Intuitively, the decoder can be said to selectively focus on (pay attention to) different parts of the input sequence during output sequence generation. This visualized in the attention map above, which is a heatmap indicating the alignment scores between tokens in the source and target sentences (white indicated high alignment score). As the task is to translate an English sentence into French, an attention map with a highly activated diagonal is unsurprising given a similar Subject-Verb-Object order for both languages.
