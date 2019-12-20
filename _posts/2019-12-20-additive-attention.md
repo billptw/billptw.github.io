@@ -26,7 +26,7 @@ Given the annotations obtained from the encoder, the decoder can now calculate t
 
 $$\mathbf{c}_{i}=\sum_{j=1}^{n} \alpha_{i,j} \boldsymbol{h}_{j}$$
 
-$$\alpha_{i,j}$$ is the alignment score, which determines how much each source hidden state should be considered for the output. The alignment score is parameterized by a feedforward network that is trained with the model. Upon obtaining the context vector, we can then generate the decoder output as per normal seq2seq, by using the context vector and previous decoder time-step output as input into the  decoder for each time-step. 
+$$\alpha_{i,j}$$ is the alignment score, which determines how much each source hidden state should be considered for the output. It is calculated by **adding** the outputs of the decoder hidden state with the encoder outputs, after both are passed through separate linear layers (this is why the attention is termed as 'additive'), followed by passing the output through a $$tanh$$ activation layer. The weights of the aforementioned layers are parameterized and trained with the encoder-decoder model. Upon obtaining the context vector, we can then generate the decoder output as per normal seq2seq, by using the context vector and previous decoder time-step output as input into the  decoder for each time-step. 
 
 ![Attention Map](/images/attention-map.png){:height="50%" width="50%"}{: .center-image }
 *Source: ([Bahdanau et al., 2014](https://arxiv.org/pdf/1409.0473.pdf))*
