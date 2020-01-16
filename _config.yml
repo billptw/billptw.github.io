@@ -9,7 +9,7 @@ url: "https://billptw.github.io/"
 include:
   - _pages
   - assets
-  - index.html
+  # - index.html
 exclude:
   - TODO.md
   - README.md
@@ -73,17 +73,17 @@ defaults:
     values:
       toc: true
       toc_label: "Contents"
-      read_time: false
+      read_time: true
       comments: true
   # portfolio
-  # - scope:
-  #     path: ""
-  #     type: portfolio
-  #   values:
-  #     author_profile: false
-  #     excerpt: ""
-  #     sidebar:
-  #       nav: "portfolio"
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      author_profile: false
+      excerpt: ""
+      sidebar:
+        nav: "portfolio"
 
 # collections
 collections:
