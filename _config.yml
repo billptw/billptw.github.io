@@ -1,10 +1,10 @@
 # Configs for pwills.com
 
-title: "pwills.com"
-name: "pwills.com"
-email: peter@pwills.com
-url: "http://www.pwills.com"
-repository: "peterewills/peterewills.github.io"
+title: Bill Pung
+name: Bill Pung
+email: pung0013@e.ntu.edu.sg
+url: "https://billptw.github.io/"
+# repository: "billptw/billptw.github.io"
 
 include:
   - _pages
@@ -29,25 +29,26 @@ minimal_mistakes_skin: "dirt"
   
 # settings for author profile
 author:
-  name   : "Peter Wills"
-  avatar : "/assets/images/headshot.jpg"
-  bio    : "I enjoy writing about things I'm interested in - mostly computing, math, physics, and software engineering."
-  location: "San Francisco, CA"
-  github : peterewills
-  linkedin: peterewills
-  email  : peter@pwills.com
+  name   : "Bill Pung"
+  avatar : "/assets/img/avatar.jpg"
+  bio    : "PhD Candidate in AI"
+  location: "NTU, Singapore"
+  github : billptw
+  linkedin: billptw
+  twitter: billptw
+  email  : pung0013@e.ntu.edu.sg
 
 
 # # comments by disqus
 comments:
   provider: "disqus"
   disqus:
-    shortname: "pwills-com"
+    shortname: "billptw-github-io.disqus.com"
 
 analytics:
   provider: "google"
   google:
-    tracking_id: "UA-116208936-1"
+    tracking_id: "UA-156335706-1"
 
 
 # pagination for blog page
