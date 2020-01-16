@@ -1,6 +1,6 @@
 ---
-layout: posts
 title: Additive Attention Mechanism
+category: posts
 tags: research
 ---
 
