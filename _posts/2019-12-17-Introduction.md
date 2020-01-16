@@ -1,6 +1,6 @@
 ---
 title: Introduction
-category: posts
+category: post
 tags: personal
 ---
 
