@@ -1,4 +1,4 @@
-# Configs for pwills.com
+# Configs
 
 title: Bill Pung
 name: Bill Pung
@@ -76,14 +76,14 @@ defaults:
       read_time: false
       comments: true
   # portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      author_profile: false
-      excerpt: ""
-      sidebar:
-        nav: "portfolio"
+  # - scope:
+  #     path: ""
+  #     type: portfolio
+  #   values:
+  #     author_profile: false
+  #     excerpt: ""
+  #     sidebar:
+  #       nav: "portfolio"
 
 # collections
 collections:
