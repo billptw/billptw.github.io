@@ -4,7 +4,7 @@ title: Bill Pung
 name: Bill Pung
 email: pung0013@e.ntu.edu.sg
 url: "https://billptw.github.io/"
-# repository: "billptw/billptw.github.io"
+repository: "billptw/billptw.github.io"
 
 include:
   - _pages
@@ -23,6 +23,7 @@ plugins:
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 # theme: "minimal-mistakes-jekyll"
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "dirt"
@@ -73,7 +74,8 @@ defaults:
     values:
       toc: true
       toc_label: "Contents"
-      read_time: 
+      read_time: true
+      words_per_minute: 270
       comments: true
   # portfolio
   - scope:
