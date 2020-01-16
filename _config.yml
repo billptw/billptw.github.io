@@ -9,7 +9,7 @@ url: "https://billptw.github.io/"
 include:
   - _pages
   - assets
-  # - index.html
+  - index.html
 exclude:
   - TODO.md
   - README.md
@@ -23,7 +23,7 @@ plugins:
 
 # Build settings
 markdown: kramdown
-theme: "minimal-mistakes-jekyll"
+# theme: "minimal-mistakes-jekyll"
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "dirt"
   
