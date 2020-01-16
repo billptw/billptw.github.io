@@ -9,7 +9,7 @@ url: "https://billptw.github.io/"
 include:
   - _pages
   - assets
-  # - index.html
+  - index.html
 exclude:
   - TODO.md
   - README.md
