@@ -74,9 +74,8 @@ defaults:
     values:
       toc: true
       toc_label: "Contents"
-      read_time: true
-      words_per_minute: 270
-      comments: true
+      read_time: 
+      comments: false
   # portfolio
   - scope:
       path: ""
