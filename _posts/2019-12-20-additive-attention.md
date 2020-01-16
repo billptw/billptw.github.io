@@ -8,7 +8,7 @@ Attention mechanism is a very popular technique used in neural models today, wit
 
 ## Why attention?
 
-![Seq2Seq Model](/images/en2ch.png){:height="80%" width="80%"}{: .center-image }
+![Seq2Seq Model](/assets/img/en2ch.png){:height="80%" width="80%"}{: .center-image }
 *Source: ([Weng, 2018](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html))*
 
 In the motivating example of translating a sentence from one language to another, the sequence-to-sequence model featuring an encoder and decoder is commonly used (refer to the [previous post]({{ site.baseurl }}{% link _posts/2019-12-18-Seq2Seq.md %}) for more in-depth explanation). In the seq2seq model, the decoder takes in an input sequence and generates a context vector of pre-defined length. For purposes of illustration, one can interpret the context vector as the 'meaning' of the input sentence that is captured by the neural network. For the above example of translating from English to Chinese, the sentence "She is eating a green apple" comprising 6 words (tokens) is represented as a context vector of 5 numbers. This context vector is then used at the input of another network, the decoder, to generate the desired translated sentence in Chinese.
@@ -29,7 +29,7 @@ $$\mathbf{c}_{i}=\sum_{j=1}^{n} \alpha_{i,j} \boldsymbol{h}_{j}$$
 
 $$\alpha_{i,j}$$ is the alignment score, which determines how much each source hidden state should be considered for the output. It is calculated by **adding** the outputs of the decoder hidden state with the encoder outputs, after both are passed through separate linear layers (this is why the attention is termed as 'additive'), followed by passing the output through a $$tanh$$ activation layer. The weights of the aforementioned layers are parameterized and trained with the encoder-decoder model. Upon obtaining the context vector, we can then generate the decoder output as per normal seq2seq, by using the context vector and previous decoder time-step output as input into the  decoder for each time-step. 
 
-![Attention Map](/images/attention-map.png){:height="50%" width="50%"}{: .center-image }
+![Attention Map](/assets/img/attention-map.png){:height="50%" width="50%"}{: .center-image }
 *Source: ([Bahdanau et al., 2014](https://arxiv.org/pdf/1409.0473.pdf))*
 
 In essence, through learning the alignment scores, the model learns how much of the annotation vector in each encoder time-step it should use for different time-steps in the decoder. Intuitively, the decoder can be said to selectively focus on (pay attention to) different parts of the input sequence during output sequence generation. This visualized in the attention map above, which is a heatmap indicating the alignment scores between tokens in the source and target sentences (white indicated high alignment score). As the task is to translate an English sentence into French, an attention map with a highly activated diagonal is unsurprising given a similar Subject-Verb-Object order for both languages.

@@ -73,7 +73,7 @@ defaults:
     values:
       toc: true
       toc_label: "Contents"
-      read_time: true
+      read_time: 
       comments: true
   # portfolio
   - scope:
