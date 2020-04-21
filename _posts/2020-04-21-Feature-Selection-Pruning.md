@@ -1,0 +1,41 @@
+---
+title: Feature Selection & Pruning Methods
+category: posts
+tags: research
+---
+
+Feature selection is a popular machine learning technique used to identify subsets of relevant features (e.g. variables, predictors) in model construction, with a goal of obtaining a smaller model. In a similar vein, a model compression technique commonly used on deep neural networks today is pruning, popularized by ([Han et al., 2015](https://arxiv.org/abs/1510.00149)). In this post, we explore the main feature selection algorithms in machine learning, and use this lens to view the popular pruning methods in deep learning today.
+
+## Feature Selection
+There are 3 general classes of feature selection algorithms- Filter methods, Wrapper methods and Embedded methods.
+
+### Filter methods
+Within feature selection, filter methods use proxy methods for measuring pruning error rates, while wrapper methods directly measure the change in performance on a validation set. For filter methods, the proxy methods can be univariate statistics on the weights, or bivariate tests on the weigts and outputs. Examples of filter methods include variance threshold (keeping only the top-k nodes with highest variance), information gain (measures the reduction of entropy in classes provided by each hidden node), Chi-squared tests (measures the relevance of each hidden node to the class), Spearman/Pearson correlation scores, Fisher information scores, etc.
+
+### Wrapper methods
+Wrapper methods, on the other hand, are search algorithms that select for feature subsets which perform well on a validation set. This improves test accuracy on the particular dataset, but may lead to overfitting and reduced generalization scores than filter methods, and is more computationally intensive. Wrapper methods include genetic algorithms, greedy forward selection (iteratively including features in the model that improves performance until convergence), greedy backward elimination (iteratively removing features from a trained model), etc.
+
+### Embedded methods
+Embedded methods incorporate the feature selection process during model construction (i.e. training), as opposed to the aforementioned two methods that work on trained networks. Embedded methods include regularizers that penalise model complexity, such as the LASSO and Ridge method which penalizes the regression coefficients with an L1 or L2 penalty to the cost function respectively, and decision tree based methods such as XGBoost, encouraging sparsity in the weight matrix during training.
+
+## Pruning as Feature Selection
+Whereas feature selection is a machine learning algorithm used to select relevant subsets of features in a model, one could view pruning techniques as feature selection algorithms, where the goal is to find a subset of the original model. We explore some of these algorithms to see where current pruning methods fit in.
+
+### Heuristics-based filters
+Filter methods constitute the most popular method in pruning. One common heuristic used in pruning is the L1-norm of weights, which is used to prune weights locally (i.e. smallest k% of parameters in each layer by L1 norm) or globally (smallest k% of parameters across all layers by L1 norm). This has been shown to be competitive with other heuristics ([Han et al., 2015](https://arxiv.org/abs/1510.00149)). Hessian-based methods (prunes weights with low Hessian of the loss with respect to the weights) are also popular ([Dong et al., 2017](https://arxiv.org/pdf/1705.07565.pdf)), but are approximate (Hessians are neither diagonal nor positive definite in general). 
+
+### Wrapper methods and pruning
+Wrapper methods such as SNIP ([Lee et al., 2019](https://openreview.net/forum?id=B1VZqjAcYX)) measures the sensitivity in the loss function for each weight when removed (approximating with a gradient-based approach). This method allows for single-shot pruning prior to re-training, unlike filter methods of magnitude pruning, which is commonly implemented iteratively (where a small proportion of the network is pruned and retrained until target sparsity level). One pseudo-wrapper method, NSIP ([Yu et al., 2018](https://arxiv.org/abs/1711.05908)), measures the importance of weights by their outputs of the second-last layer (Final Response Layer, FRL), as its outputs are directly fed into the final classifier layer. In this method, the network pruning problem is formulated as a binary integer programming objective of minimizing the L1 norm between the pre- and post-pruning FRL outputs. The method uses Infinite-Feature Selection as a filtering method on the FRL of the network, to apply feature ranking on the weights with respect to their effects on the FRL outputs. The importance score produced by feature ranking is then back-propogated as a weighted sum of preceeding neurons through the network. While this method does not directly use the classifier output during optimization, it uses the FRL as a proxy, employing filter methods in the selection of feature subsets to maximize performance on the proxy layer. Hence, it can be seen as a wrapper method on a proxy classifier.
+
+### Regularizers as embedded forms of sparsity induction
+Embedded methods in pruning can be implicit or explicit, whereby implicit methods like Dropout is already ubiquitous in the training of many modern deep learning models to reduce overfitting. Dropout works by randomly setting weights to 0 during training, encouraging the model to learn sparser representations ([Srivastava et al., 2014](http://jmlr.org/papers/volume15/srivastava14a.old/srivastava14a.pdf)). Other methods include Structured Dropout ([Fan et al., 2020](https://openreview.net/forum?id=SylO2yStDr)), where layers of a Transformer model is randomly dropped during training (akin to Dropout); one may view this form as dropout as inducing sparsity at the architecture level. Both methods improve robustness of trained models during post-training pruning.
+
+## Bonus- Feature Extraction & Other Techniques
+Another form of machine learning dimensionality reduction methods is Feature Extraction, where features are transformed into a smaller set (versus just selecting a smaller set in feature selection). In this section, we seek to map other popular model compression techniques (commonly seen as orthogonal to pruning), such as quantization, knowledge distillaion, projections, etc.
+
+Knowledge Distillation (where a smaller student network learns from the outputs of a larger teacher network), and Weight Factorisation in ALBERT ([Lan et al., 2019](https://arxiv.org/abs/1909.11942)) and ProjectionNet (where features are projected to a lower dimensional embedding space) ([Ravi et al., 2017](https://arxiv.org/abs/1708.00630)), are projection forms of feature extraction algorithms (e.g. autoencoders), learning a smaller parameter space used to represent the model.
+
+Quantization involves converting (approximating) model parameters from larger bit-width representations to smaller ones, utilizing vector quantization techniques from signal processing to minimize quantization error. This is similar to clustering algorithms such as the k-means clustering (involving the partitioning of inputs into k clusters and approximating their values to the nearest means), or PCA (decomposes the matrix by eigenvalue decomposition or SVD). In a similar vein, Locality-sensitive hashing is used in Transformers model (e.g. Reformer ([Kitaev et al., 2019](https://openreview.net/forum?id=rkgNKkHtvB))) to efficiently conduct a nearest neighbour search in high dimensions, and is also another clustering algorithm.
+
+## Conclusion
+In this post, we explored how the common deep learning techniques of pruning, quantization and knowledge distillation are similar to machine learning dimensionality reduction techniques, namely feature selection and extraction. We note that much of today’s pruning methods are filter methods in feature selection; the key observation is that the common deep learning practice of training with regularisers (e.g. Dropout) allows simple heuristics (e.g. L1-norm based pruning) to be applied on trained models effectively. It would be interesting to revisit interesting machine learning techniques, and apply them to the SOTA models today.
