@@ -8,7 +8,7 @@ permalink: /about/
 
 # About Bill
 
-<img src="{{ "https://github.com/billptw/billptw.github.io/blob/master/assets/img/alibaba_office.jpg" }}" width="50%" hspace="20" align="right">
+<img src="{{ "https://github.com/billptw/billptw.github.io/blob/master/assets/img/alibaba_office.jpg?raw=true" }}" width="50%" hspace="20" align="right">
 
 Passionate about using technology and entrepreneurship to build meaningful products for society. A curious learner and tinkerer who thrives in collaborative teams. I enjoy applying AI and ML techniques to build deep tech products, with an interest in NLP, CV and other machine learning applications. Check out my projects on [Github](https://github.com/billptw).
 
