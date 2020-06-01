@@ -10,6 +10,7 @@ permalink: /about/
 
 <img src="{{ "https://github.com/billptw/billptw.github.io/blob/master/assets/img/alibaba_office.jpg?raw=true" }}" width="50%" hspace="20" align="right">
 
+(/assets/img/layerdrop-pkd-table.png){:height="100%" width="100%"}
 
 Currently, I am pursuing my PhD in Nanyang Technological University (Singapore), in collaboration with [Alibaba](https://media.ntu.edu.sg/NewsReleases/Pages/newsdetail.aspx?news=9e521a80-eaec-41ac-9c7e-802a62fc8d52). I specialize in improving neural networks on the edge, for natural language processing tasks. To aid my learning, I pen my findings and thoughts on this AI blog. Some of my works are currently under review in AI conferences, but I would be happy to share them in person (to respect anonymity requirements). Otherwise, feel free to check out my side projects on [Github](https://github.com/billptw).
 
