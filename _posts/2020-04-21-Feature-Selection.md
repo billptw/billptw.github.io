@@ -1,5 +1,5 @@
 ---
-title: Feature Selection & Pruning Methods
+title: Compression as Feature Selection
 category: posts
 tags: research
 ---
