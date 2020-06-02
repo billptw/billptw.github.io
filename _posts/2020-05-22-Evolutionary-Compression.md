@@ -1,5 +1,5 @@
 ---
-title: Evolutionary Methods in Compression & Multi-tasking
+title: Evolutionary Methods in Compression
 category: posts
 tags: research
 ---
