@@ -4,6 +4,10 @@ category: posts
 tags: research
 ---
 
+There are plethora of model compression techniques used to compress very large trained neural networks for inference on edge devices, such as mobile phones and IoT devices. The purpose of these compression techniques is to fit the constraits of these edge devices. For example, an edge device may face memory constraints in storing the model weights, latency constraints for real-time applications, and energy constraints as these devices may be running on a limited power supply. 
+
+To make inference of these models more efficient, there are several popular model compression techniques, namely quantization, pruning and knowledge distillation. In this post, we introduce some key papers surrounding these topics, and other methods of model compression.
+
 ## Quantization
 Quantization of network weights involve approximating the float representation with a fewer bits. For example, by compressing the usual 32bit Floating Point (FP32) tensors into INT8, we can gain $\times 4$ reduction in model size and bandwidth requirements during inference. Binarization can be seen as an extreme version of quantization where the weights and activations are constrained to binary values.
 
