@@ -1,3 +1,22 @@
+// Header
+.masthead {
+    background-color: #1e1e1e;
+}
+.greedy-nav {
+    background: #1e1e1e;
+}
+
+.greedy-nav .hidden-links {
+    background: #1e1e1e;
+    border: 0;
+}
+
+.greedy-nav .hidden-links:after {
+    border-color: #1e1e1e transparent;
+}
+.greedy-nav .visible-links a:before {
+    background: #ffd34f;
+}
 .page__hero--overlay {
     background-position: 50% 60%;
     padding: 6em 0;
@@ -70,7 +89,6 @@
 }
 // Custom Footer Links
 .page__footer {
-    background-color: #1e1e1e;
     color: #fff;
 }
 .custom-footer__social {
