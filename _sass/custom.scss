@@ -8,3 +8,39 @@
 .page__hero--overlay .page__lead {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
 }
+.masthead__inner-wrap {
+    padding: 0.5em 1em;
+}
+.greedy-nav a.site-title {
+    font-size: 24px;
+}
+
+// Image Row
+.img-row {
+    display: -webkit-box; 
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex; 
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+.img-col {
+    margin: 10px 0;
+    width: 100%;
+}
+.img-row img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (min-width: 1024px) {
+    .img-row { 
+        flex-direction: row;
+    }
+    .img-col {
+        width: 50%;
+        margin: 0;
+    }
+}

@@ -17,13 +17,24 @@ Currently, I am pursuing my PhD in Nanyang Technological University (Singapore),
 
 Previously, I launched [Cokun](http://www.weeworks.wkwsci.ntu.edu.sg/NanyangChronicle/News/2502sleepingpod.html) with some friends, where we provided a [resting pod rental service in NTU](https://www.facebook.com/watch/?v=1904767012895024). I learnt a lot from this entrepreneurship experience, having led the team in marketing, procurement of pod and supplies, logistics, maintenance, financial management, and stakeholder management. We raised $15k in funding from accelerators, were [featured](https://www.straitstimes.com/singapore/book-pod-for-short-nap-on-ntu-campus) [on](https://www.tnp.sg/news/singapore/ntu-students-get-new-rest-pod) [national](https://www.straitstimes.com/singapore/ntu-launches-rest-pod-in-school-library-for-students-to-catch-a-quick-nap) [media](https://www.businessinsider.sg/another-singapore-university-students-place-nap-already-fully-booked), and won 1st runner-up in a [business plan competition](https://www.nexiats.com.sg/news-insights/nexia-ts-congratulates-winners-nexia-day-business-plans-contest-2018/). But above all, the most rewarding experience was having served over 400 staff and students in NTU, with 95% reporting interest to use the service again. All things considered, we found the business not financially viable, and decided to donate the pod to the university.
 
-![Photo](/assets/img/cokun.jpg){:width="50%" align="left"}
-![Photo](/assets/img/jpm.jpg){:width="50%" align="right"}
+<div class="img-row">
+    <div class="img-col">
+        <img src="/assets/img/cokun.jpg">
+    </div>
+    <div class="img-col">
+        <img src="/assets/img/jpm.jpg">
+    </div>
+</div>
 
 I was a Summer Technology Analyst at JPMorgan in 2018, where my main task involved building dashboards on an incident reporting platform using Angular. The internship gave me a taste of how software engineering is done in a global firm, through Scrum stand-ups with engineers from the UK and India, and undergoing code reviews on Git. One particular highlight of this stint was prototyping a voice-based authentication and chatbot system during the firm-wide Global Hackathon, representing the Singapore office as the top solution and placing 2nd runner-up in the Asia Pacific round. Post-hackathon, we worked with our mentor to obtain the buy-in from APAC leaders, with plans made to embark on development.
-
-![Photo](/assets/img/nch.jpg){:width="50%" align="left"}
-![Photo](/assets/img/se3d.jpg){:width="50%" align="right"}
+<div class="img-row">
+    <div class="img-col">
+        <img src="/assets/img/nch.jpg">
+    </div>
+    <div class="img-col">
+        <img src="/assets/img/se3d.jpg">
+    </div>
+</div>
 
 My other internship stints include: Design Engineering in [NCH Corporation](https://www.nch.com/) over a summer in Texas, where I built an autonomous system to dispense chemicals; Mechanical Engineering in [SE3D Inc](https://www.linkedin.com/company/se3d/) for 6 months in California, where I designed 3D printers and wrote engineering drawings for manufacturing; Management consulting projects with various start-ups and an MNC in Singapore and Sweden, conducting market analyses and presenting go-to-market strategies using a data-driven approach.
 
