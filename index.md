@@ -1,12 +1,13 @@
 ---
-title: " "
-# header:
-#   overlay_image: /assets/images/utah.jpg
-#   caption: "Photo Credit: **Kathleen Finlinson**"
-permalink: /about
----
+title: "About Bill"
+layout: single
+date: 2016-03-23T11:48:41-04:00
 
-# About Bill
+excerpt: "Sharing my findings and lessons in AI"
+
+classes: wide
+
+---
 ![Photo](/assets/img/alibaba_office.jpg){:width="45%" align="right" hspace="20"}
 
 I enjoy delving into technology to build meaningful solutions for society. With an entrepreneurial slant, I bring creativity and zest to the teams am I fortunate to be part of. I am Singaporean, and am currently residing on this [sunny island](https://www.nea.gov.sg/weather).

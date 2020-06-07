@@ -64,3 +64,31 @@
         margin: 0;
     }
 }
+// Custom Footer Links
+.page__footer {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+.custom-footer__social {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+        color: #fff;
+        font-size: 32px;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+
+        @media screen and (min-width: 64em) {
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+    }
+}
+.page__footer-copyright {
+    text-align: center;
+}

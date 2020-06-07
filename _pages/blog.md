@@ -11,5 +11,5 @@ header:
 excerpt: "Sharing my findings and lessons in AI"
 
 classes: wide
-
+permalink: /blog1
 ---

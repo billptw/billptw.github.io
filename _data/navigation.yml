@@ -1,13 +1,14 @@
 # the masthead
 main:
-  - title: "Blog"
-    url: /
+
   - title: "About"
-    url: /about/
+    url: /
+  - title: "Blog"
+    url: /blog
   # - title: "Portfolio"
-  #   url: /portfolio/
-  # - title: "Resume"
-  #   url: /assets/docs/resume.pdf
+    # url: /portfolio/
+  - title: "Resume"
+    url: /assets/docs/resume.pdf
 
 # sidebar for portfolio
 portfolio:
