@@ -50,6 +50,10 @@
     .sidebar {
         order: 2;
         margin: 30px 0 0 0;
+        
+        .btn--inverse {
+            display: none;
+        }
     }
     .page {
         order: 1;
