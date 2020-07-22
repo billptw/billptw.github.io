@@ -44,4 +44,4 @@ MO-MFEA-II is similar to MFEA-II in that they both utilize a transfer parameter 
 
 
 ## Conclusion
-In this post, we explored how evolutionary algorithms can be applied to model compression. We then looked at multi-objective, multifactorial optimization problems. How is this related to model compression? Consider the scenario where we have a large model on cloud that is able to classify images into 20000 classes. Now suppose we have many client devices on the edge, and they each request a model that is able to classify a small subset of the original classes (say, only 5 classes). How do we obtain the many variants of subset models? Instead of compression the original large model to obtain a smaller model for each permutation of our request, we can cast the problem as a multifactorial optimization problem and use evolutionary algorithms to give us good candidate subnetworks. This is indeed an interesting line of work!
+In this post, we explored how evolutionary algorithms can be applied to model compression. We then looked at multi-objective, multifactorial optimization problems.
